@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h2> Hệ thống quản lý khách hàng</h2>
+<button onclick="display()">Bấm vào đây để hiển thị danh sách khách hàng</button>
+<button onclick="addCustomer()">Thêm khách hàng mới</button>
+<p id="display"></p>
+
+<script>
+    class Customer {
+        constructor(id, name, phone,address, email) {
+            this.id = id;
+            this.name = name;
+            this.phone = phone;
+            this.address = address;
+            this.email = email;
+        }
+    }
+    let customerList=[
+        new Customer("KH01","Nguyen Van A","0123456789","Đà Nẵng","nguyenvana@gmail.com"),
+        new Customer("KH02","Nguyen Van B","0123456799","Hồ Chí Minh","nguyenvanb@gmail.com"),
+        new Customer("KH03","Nguyen Van C","0123456778","Hà Nội","nguyenvanc@gmail.com"),
+    ];
+    function display(){
+        let tableString=`
+        <table border="1" style="border-collapse: collapse">
+               <tr>
+                   <th>STT</th>
+                   <th>Mã KH</th>
+                   <th>Tên</th>
+                   <th>Số điện thoại</th>
+                   <th>Địa chỉ</th>
+                   <th>Email</th>
+               </tr>`;
+        for (let i=0;i<customerList.length;i++){
+            tableString+=`<tr>
+                <td>${i+1}</td>
+                <td>${customerList[i].id}</td>
+                <td>${customerList[i].name}</td>
+                <td>${customerList[i].phone}</td>
+                <td>${customerList[i].address}</td>
+                <td>${customerList[i].email}</td>
+            </tr>`;
+        }
+        document.getElementById("display").innerHTML = tableString;
+    }
+
+    function addCustomer() {
+        let id = prompt("Nhập mã khách hàng:");
+        let name = prompt("Nhập tên khách hàng:");
+        let phone = prompt("Nhập sdt khách hàng:");
+        let address = prompt("Nhập địa chỉ khách hàng:");
+        let email = prompt("Nhập email khách hàng:");
+
+        customerList.push(new Customer(id, name, phone,address, email));
+        display();
+    }
+</script>
+</body>
+</html>

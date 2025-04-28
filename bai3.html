@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function countNumberPair(arr, k) {
+        if (arr.length>50) {
+            document.write("Mảng không được vượt quá 50 phần tử");
+            return;
+        }
+        if (k<=0) {
+            document.write("k phải là số nguyên dương");
+            return;
+        }
+
+        let count=0;
+
+        for (let i=0;i<arr.length;i++) {
+            for (let j=i+1;j<arr.length;j++) {
+                let sum=arr[i]+arr[j];
+                if (sum%k===0) {
+                    count++;
+                }
+            }
+        }
+
+        document.write("Có " +count+" cặp số có tổng chia hết cho "+ k);
+    }
+
+    let array2 = [1, 2, 3, 4, 5, 6];
+    let k = 5;
+    countNumberPair(array2, k);
+
+</script>
+</body>
+</html>
