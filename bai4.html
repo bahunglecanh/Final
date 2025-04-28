@@ -15,7 +15,7 @@
 
 <script>
     class Customer {
-        constructor(id, name, phone,address, email) {
+        constructor(id, name, phone, address, email) {
             this.id = id;
             this.name = name;
             this.phone = phone;
@@ -23,13 +23,15 @@
             this.email = email;
         }
     }
-    let customerList=[
-        new Customer("KH01","Nguyen Van A","0123456789","Đà Nẵng","nguyenvana@gmail.com"),
-        new Customer("KH02","Nguyen Van B","0123456799","Hồ Chí Minh","nguyenvanb@gmail.com"),
-        new Customer("KH03","Nguyen Van C","0123456778","Hà Nội","nguyenvanc@gmail.com"),
+
+    let customerList = [
+        new Customer("KH01", "Nguyen Van A", "0123456789", "Đà Nẵng", "nguyenvana@gmail.com"),
+        new Customer("KH02", "Nguyen Van B", "0123456799", "Hồ Chí Minh", "nguyenvanb@gmail.com"),
+        new Customer("KH03", "Nguyen Van C", "0123456778", "Hà Nội", "nguyenvanc@gmail.com"),
     ];
-    function display(){
-        let tableString=`
+
+    function display() {
+        let tableString = `
         <table border="1" style="border-collapse: collapse">
                <tr>
                    <th>STT</th>
@@ -39,9 +41,9 @@
                    <th>Địa chỉ</th>
                    <th>Email</th>
                </tr>`;
-        for (let i=0;i<customerList.length;i++){
-            tableString+=`<tr>
-                <td>${i+1}</td>
+        for (let i = 0; i < customerList.length; i++) {
+            tableString += `<tr>
+                <td>${i + 1}</td>
                 <td>${customerList[i].id}</td>
                 <td>${customerList[i].name}</td>
                 <td>${customerList[i].phone}</td>
@@ -59,7 +61,7 @@
         let address = prompt("Nhập địa chỉ khách hàng:");
         let email = prompt("Nhập email khách hàng:");
 
-        customerList.push(new Customer(id, name, phone,address, email));
+        customerList.push(new Customer(id, name, phone, address, email));
         display();
     }
 </script>

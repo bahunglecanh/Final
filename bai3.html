@@ -10,27 +10,27 @@
 <body>
 <script>
     function countNumberPair(arr, k) {
-        if (arr.length>50) {
+        if (arr.length > 50) {
             document.write("Mảng không được vượt quá 50 phần tử");
             return;
         }
-        if (k<=0) {
+        if (k <= 0) {
             document.write("k phải là số nguyên dương");
             return;
         }
 
-        let count=0;
+        let count = 0;
 
-        for (let i=0;i<arr.length;i++) {
-            for (let j=i+1;j<arr.length;j++) {
-                let sum=arr[i]+arr[j];
-                if (sum%k===0) {
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = i + 1; j < arr.length; j++) {
+                let sum = arr[i] + arr[j];
+                if (sum % k === 0) {
                     count++;
                 }
             }
         }
 
-        document.write("Có " +count+" cặp số có tổng chia hết cho "+ k);
+        document.write("Có " + count + " cặp số có tổng chia hết cho " + k);
     }
 
     let array2 = [1, 2, 3, 4, 5, 6];

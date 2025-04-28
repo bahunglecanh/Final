@@ -10,12 +10,12 @@
 <body>
 <script>
     function roundGrade(grade) {
-        if (grade<0|| grade>100) {
+        if (grade < 0 || grade > 100) {
             document.write("Điểm không hợp lệ. Phải từ 0 đến 100.");
             return grade;
         }
 
-        if (grade<48) {
+        if (grade < 48) {
             document.write("Không làm tròn vì điểm dưới 48.");
             return grade;
         }
@@ -25,15 +25,15 @@
             nextMulOf5++;
         }
 
-        if (nextMulOf5-grade<3) {
+        if (nextMulOf5 - grade < 3) {
             return nextMulOf5;
         } else {
             return grade;
         }
     }
 
-    document.write("Điểm ban đầu được khởi tạo là: "+84+" Và sau khi làm tròn là: "+roundGrade(84)+"<br>");
-    document.write("Điểm ban đầu được khởi tạo là: "+77+" Và sau khi làm tròn là: "+roundGrade(77)+"<br>");
+    document.write("Điểm ban đầu được khởi tạo là: " + 84 + " Và sau khi làm tròn là: " + roundGrade(84) + "<br>");
+    document.write("Điểm ban đầu được khởi tạo là: " + 77 + " Và sau khi làm tròn là: " + roundGrade(77) + "<br>");
     document.write(roundGrade(44))
 
 </script>
